@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AlertDialog
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 
 import kotlinx.android.synthetic.main.activity_material.*
@@ -83,6 +82,8 @@ class MaterialActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_RECORD) {
             if (resultCode == Activity.RESULT_OK) {
+                val nickname = data?.getStringExtra("NICKNAME")
+                Log.d(TAG, "nickname is $nickname")
                 replay()
             }
         }

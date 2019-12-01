@@ -26,7 +26,9 @@ class RecordActivity : AppCompatActivity() {
                 .putString("counter", counter.toString())
                 .putString("nickname", nickname)
                 .apply()
-            setResult(Activity.RESULT_OK)
+            val intent = Intent()
+            intent.putExtra("NICKNAME", nickname)
+            setResult(Activity.RESULT_OK, intent)
             finish()
         }
 
